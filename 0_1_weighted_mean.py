@@ -1,3 +1,5 @@
+import numpy as np
+
 x=list(map(int,list(input().split(' '))))
 w = input()
 if w:
@@ -12,5 +14,9 @@ def average(x,weights=None):
     if weights:
         return sum(i*j for i,j in zip(x,weights)) / sum(weights)
     return sum(x) / len(x)
+
 wm = average(x,weights=w)
+print(f"{wm:.1f}")
+
+wm = np.average(x,weights=w)
 print(f"{wm:.1f}")
